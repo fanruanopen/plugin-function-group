@@ -2,7 +2,7 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>2.0</version>
+    <version>2.1</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor>solution</vendor>
@@ -12,6 +12,8 @@
         <p>[2016-02-02]字符串反转函数</p>
         <p>[2016-02-02]字符串匹配函数</p>
         <p>[2016-02-02]函数返回值处理函数</p>
+        <p>[2016-02-02]字符串转拼音函数</p>
+        <p>[2016-03-21]JSON内容查询函数。<a href="https://github.com/tyro668/JsonPath">查询语法参见这里</a>。</p>
     ]]></change-notes>
     <extra-core>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.StringReverse" name="StringReverse" description="反转字符串"/>
@@ -20,6 +22,7 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.StringPinyin" name="StringPinyin" description="输出给定字符串的拼音。StringPinyin(&quot;你好啊&quot;, &quot;  &quot;, 1)返回这个字符串的拼音。第二哥参数表示拼音之间的间隔符，第三个参数表示拼音的输出格式，1表示不输出音调，-1表示音调用数字表示。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.GetIP" name="GetIP" description="传递内置的sessionID参数，获取IP地址"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.ProcessErrorValue" name="ProcessErrorValue" description="处理返回错误值的公式。ProcessErrorValue(SQRT(), &quot;错误的值&quot;)，由于SQRT函数没有给定参数，直接使用的情况下是会返回#NAME的，而用了这个函数，就会返回第二个参数给定的值了（默认为空字符串）。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.JSONPathFinder" name="JSONPathFinder" description="根据JSON查询语句从给定的JSON内容中查询出结果。"/>
     </extra-core>
     <extra-report>
 

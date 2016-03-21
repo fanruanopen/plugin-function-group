@@ -40,7 +40,7 @@ public class JSONPathFinder extends AbstractFunction {
         } else if  (content.toLowerCase().startsWith("http:")) {
             try {
                 URL url = new URL(content);
-                result = JsonPath.read(url, filter);
+                result = JsonPath.read(url.openStream(), filter);
             } catch (MalformedURLException e) {
                 FRLogger.getLogger().error(e.getMessage(), e);
             } catch (IOException e) {
@@ -66,5 +66,13 @@ public class JSONPathFinder extends AbstractFunction {
         } else {
             return result;
         }
+    }
+
+    public static void main(String... args) throws Exception {
+        URL url = new URL("http://7xs469.com1.z0.glb.clouddn.com/test.json");
+        InputStream stream = url.openStream();
+        Object result = JsonPath.read(stream, "$.store.book[1].author");
+        System.out.println(result);
+
     }
 }

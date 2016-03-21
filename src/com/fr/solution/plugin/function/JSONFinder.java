@@ -1,6 +1,5 @@
 package com.fr.solution.plugin.function;
 
-import com.fr.general.FArray;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralUtils;
 import com.fr.general.IOUtils;

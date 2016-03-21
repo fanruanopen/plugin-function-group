@@ -14,6 +14,8 @@ import com.fr.stable.Primitive;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by richie on 16/3/21.
@@ -43,27 +45,40 @@ public class JSONFinder extends AbstractFunction {
         return Primitive.NULL;
     }
 
-    private FArray<?> findResult(String content) {
+    private List<?> findResult(String content) {
+        List<?> data = new ArrayList<Object>();
         if (content.startsWith("{")) {
             try {
                 JSONArray array = new JSONArray(content);
-                return findFromJSONArray(array);
+                findFromJSONArray(array, data);
             } catch (JSONException e) {
                 FRLogger.getLogger().error(e.getMessage(), e);
-                return new FArray();
+
             }
         } else if (content.startsWith("{")) {
             try {
                 JSONObject js = new JSONObject(content);
             } catch (JSONException e) {
                 FRLogger.getLogger().error(e.getMessage(), e);
-                return new FArray();
+
             }
         }
-        return new FArray();
+        return null;
     }
 
-    private FArray findFromJSONArray(JSONArray jsonArray) throws JSONException {
-        return new FArray();
+    private void findFromJSONArray(JSONArray jsonArray, List<?> data) throws JSONException {
+        int len = jsonArray.length();
+        for (int i = 0; i < len; i ++) {
+            Object el = jsonArray.get(i);
+            if (el instanceof JSONArray) {
+                findFromJSONArray((JSONArray) el, data);
+            } else if (el instanceof JSONObject) {
+
+            }
+        }
+    }
+
+    private void findFromJSONObject(JSONObject jsonObject, List<?> data) throws JSONException {
+
     }
 }

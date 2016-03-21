@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.solution.plugin.function</id>
+    <name><![CDATA[常用函数集合]]></name>
+    <active>yes</active>
+    <version>2.0</version>
+    <env-version>8.0</env-version>
+    <jartime>2015-12-20</jartime>
+    <vendor>solution</vendor>
+    <description><![CDATA[把一些常用的函数放到插件里面来,方便用户使用]]></description>
+    <change-notes><![CDATA[
+        <p>[2015-12-02]访问报表的IP地址函数</p>
+        <p>[2016-02-02]字符串反转函数</p>
+        <p>[2016-02-02]字符串匹配函数</p>
+        <p>[2016-02-02]函数返回值处理函数</p>
+    ]]></change-notes>
+    <extra-core>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.StringReverse" name="StringReverse" description="反转字符串"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.StringFind" name="StringFind" description="查找字符串包含的字字符串的索引。StringFind(&quot;have a good time&quot;, &quot;a&quot;)，返回a在字符串中第一次出现的位置，函数可以传递第三个参数，false表示从尾部开始查找。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.StringMatch" name="StringMatch" description="判断字符串是否符合特定的正则表达式。StringMatch(&quot;abcdefg&quot;, &quot;bc&quot;)返回true。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.StringPinyin" name="StringPinyin" description="输出给定字符串的拼音。StringPinyin(&quot;你好啊&quot;, &quot;  &quot;, 1)返回这个字符串的拼音。第二哥参数表示拼音之间的间隔符，第三个参数表示拼音的输出格式，1表示不输出音调，-1表示音调用数字表示。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.GetIP" name="GetIP" description="传递内置的sessionID参数，获取IP地址"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.ProcessErrorValue" name="ProcessErrorValue" description="处理返回错误值的公式。ProcessErrorValue(SQRT(), &quot;错误的值&quot;)，由于SQRT函数没有给定参数，直接使用的情况下是会返回#NAME的，而用了这个函数，就会返回第二个参数给定的值了（默认为空字符串）。"/>
+    </extra-core>
+    <extra-report>
+
+    </extra-report>
+    <extra-platform/>
+    <extra-designer>
+
+    </extra-designer>
+</plugin>

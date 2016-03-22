@@ -71,7 +71,7 @@ public class JSONPathFinder extends AbstractFunction {
     public static void main(String... args) throws Exception {
         URL url = new URL("http://7xs469.com1.z0.glb.clouddn.com/test.json");
         InputStream stream = url.openStream();
-        Object result = JsonPath.read(stream, "$.store.book[1].author");
+        Object result = JsonPath.read(stream, "$.store.book[?(@.author == 'Nigel Rees')].author");
         System.out.println(result);
 
     }

@@ -30,6 +30,7 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.MathSumOfSquares" name="MathSumOfSquares" description="求数组中元素的平方和。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.MathGeometricMean" name="MathGeometricMean" description="求数组中元素的几何平均数。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.MathMean" name="MathMean" description="求数组中元素的算术平均数。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.ScriptEval" name="ScriptEval" description="函数中支持JavaScript脚本。ScriptEval()"/>
     </extra-core>
     <extra-report>
 

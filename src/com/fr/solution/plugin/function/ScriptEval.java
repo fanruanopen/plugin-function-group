@@ -1,5 +1,6 @@
 package com.fr.solution.plugin.function;
 
+import com.fr.general.FArray;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralUtils;
 import com.fr.script.AbstractFunction;
@@ -8,6 +9,8 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.Primitive;
 import com.fr.stable.StableUtils;
 import com.fr.stable.UtilEvalError;
+import jdk.nashorn.api.scripting.ScriptObjectMirror;
+import netscape.javascript.JSObject;
 
 import javax.script.Bindings;
 import javax.script.ScriptContext;
@@ -15,6 +18,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by richie on 16/4/12.
@@ -43,12 +47,17 @@ public class ScriptEval extends AbstractFunction {
             for (int i = 1; i < len; i += 2) {
                 String name = GeneralUtils.objectToString(args[i]);
                 parameters.add(name);
-                String value = GeneralUtils.objectToString(args[i + 1]);
-                try {
-                    Object r = cal.evalValue(value);
-                    bindings.put(name, r);
-                } catch (UtilEvalError utilEvalError) {
-                    FRLogger.getLogger().error(utilEvalError.getMessage(), utilEvalError);
+                if (args[i + 1] instanceof FArray) {
+                    FArray array = (FArray)args[i + 1];
+                    bindings.put(name, array.toList());
+                } else {
+                    try {
+                        String exString = GeneralUtils.objectToString(args[i + 1]);
+                        Object r = cal.evalValue(exString);
+                        bindings.put(name, r);
+                    } catch (UtilEvalError utilEvalError) {
+                        FRLogger.getLogger().error(utilEvalError.getMessage(), utilEvalError);
+                    }
                 }
             }
         }
@@ -61,20 +70,28 @@ public class ScriptEval extends AbstractFunction {
         sb.append(StableUtils.join(parameters, ","));
         sb.append(")");
 
-        Object result = null;
+        Object result;
         try {
             result = scriptEngine.eval(sb.toString());
+
+            if (result instanceof Map) {
+                FArray<Object> array = new FArray<Object>();
+                Iterable it = ((Map)result).values();
+                for (Object el : it) {
+                    array.add(el);
+                }
+                return array;
+            } else if (result instanceof Iterable) {
+                FArray<Object> array = new FArray<Object>();
+                for (Object el : (Iterable)result) {
+                    array.add(el);
+                }
+                return array;
+            } else {
+                return result;
+            }
         } catch (ScriptException e) {
             FRLogger.getLogger().error(e.getMessage(), e);
-        }
-        if (result != null) {
-            if (cal != null) {
-                try {
-                    return cal.evalValue(GeneralUtils.objectToString(result));
-                } catch (UtilEvalError utilEvalError) {
-                    FRLogger.getLogger().error(utilEvalError.getMessage(), utilEvalError);
-                }
-            }
         }
         return Primitive.NULL;
     }

@@ -2,7 +2,7 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>3.2</version>
+    <version>3.4</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor>solution</vendor>

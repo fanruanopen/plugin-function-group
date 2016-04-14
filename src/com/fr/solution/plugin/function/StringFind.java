@@ -8,9 +8,9 @@ import com.fr.stable.Primitive;
 /**
  * 字符串包含的索引查找
  */
-public class StringFind extends AbstractFunction {
+public class StringFind extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len < 2) {
             return Primitive.ERROR_VALUE;

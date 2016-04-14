@@ -7,10 +7,10 @@ import com.fr.stable.Primitive;
 import com.fr.web.core.SessionDealWith;
 import com.fr.web.core.SessionIDInfor;
 
-public class GetIP extends AbstractFunction {
+public class GetIP extends AbstractSolutionFunction {
 
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         if (ArrayUtils.isEmpty(args)) {
             return Primitive.ERROR_VALUE;
         }

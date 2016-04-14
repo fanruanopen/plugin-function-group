@@ -9,10 +9,10 @@ import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 /**
  * Created by richie on 16/3/22.
  */
-public abstract class AbstractMathSummaryFunction extends AbstractFunction {
+public abstract class AbstractMathSummaryFunction extends AbstractSolutionFunction {
 
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         if (ArrayUtils.isEmpty(args)) {
             return Primitive.ERROR_VALUE;
         }

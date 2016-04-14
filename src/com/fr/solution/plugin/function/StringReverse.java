@@ -8,10 +8,10 @@ import com.fr.stable.Primitive;
 /**
  * 反转字符串
  */
-public class StringReverse extends AbstractFunction {
+public class StringReverse extends AbstractSolutionFunction {
 
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         if (ArrayUtils.isEmpty(args)) {
             return Primitive.ERROR_VALUE;
         }

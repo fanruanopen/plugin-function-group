@@ -23,10 +23,10 @@ import java.util.Map;
 /**
  * Created by richie on 16/4/12.
  */
-public class ScriptEval extends AbstractFunction {
+public class ScriptEval extends AbstractSolutionFunction {
 
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len == 0) {
             return Primitive.NULL;

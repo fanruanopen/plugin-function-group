@@ -8,9 +8,9 @@ import com.fr.stable.Primitive;
 /**
  * Created by richie on 16/3/21.
  */
-public class StringMatch extends AbstractFunction {
+public class StringMatch extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len < 2) {
             return Primitive.ERROR_VALUE;

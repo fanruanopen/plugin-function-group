@@ -10,9 +10,9 @@ import org.apache.commons.math3.stat.Frequency;
 /**
  * 计算给定的值出现的次数和平率
  */
-public class MathFrequency extends AbstractFunction {
+public class MathFrequency extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len < 2) {
             return Primitive.ERROR_VALUE;

@@ -24,9 +24,9 @@ import java.util.List;
 /**
  * Created by richie on 16/3/21.
  */
-public class JSONPathFinder extends AbstractFunction {
+public class JSONPathFinder extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len < 2) {
             return Primitive.ERROR_VALUE;

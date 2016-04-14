@@ -9,9 +9,9 @@ import com.fr.stable.StringUtils;
 /**
  * 处理公式错误值
  */
-public class ProcessErrorValue extends AbstractFunction {
+public class ProcessErrorValue extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len == 0) {
             return Primitive.ERROR_VALUE;

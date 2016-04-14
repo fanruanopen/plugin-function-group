@@ -11,9 +11,9 @@ import com.fr.stable.pinyin.PinyinHelper;
 /**
  * Created by richie on 16/3/21.
  */
-public class StringPinyin extends AbstractFunction {
+public class StringPinyin extends AbstractSolutionFunction {
     @Override
-    public Object run(Object[] args) {
+    public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);
         if (len < 1) {
             return Primitive.ERROR_VALUE;

@@ -3,13 +3,7 @@ package com.fr.solution.plugin.function;
 import com.fr.general.FArray;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralUtils;
-import com.fr.general.IOUtils;
-import com.fr.json.JSONArray;
-import com.fr.json.JSONException;
-import com.fr.json.JSONObject;
-import com.fr.script.AbstractFunction;
 import com.fr.stable.ArrayUtils;
-import com.fr.stable.EncodeConstants;
 import com.fr.stable.Primitive;
 import com.jayway.jsonpath.JsonPath;
 
@@ -18,8 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by richie on 16/3/21.

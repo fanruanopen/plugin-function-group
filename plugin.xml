@@ -35,11 +35,11 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.MathMean" name="MathMean" description="求数组中元素的算术平均数。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.ScriptEval" name="ScriptEval" description="函数中支持JavaScript脚本。ScriptEval()"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.image.GenerateImage" name="Image" description="将给定的参数转换为图片，支持本地文件、远程文件以及相对路径。"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.ShaHex" name="ShaHex" description="SHA加密"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha256Hex" name="Sha256Hex" description="SHA256加密"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha384Hex" name="Sha384Hex" description="Sha384加密"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha512Hex" name="Sha512Hex" description="Sha512加密"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Md5Hex" name="Md5Hex" description="MD5加密"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.ShaHex" name="EncryptShaHex" description="SHA加密"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha256Hex" name="EncryptSha256Hex" description="SHA256加密"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha384Hex" name="EncryptSha384Hex" description="Sha384加密"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Sha512Hex" name="EncryptSha512Hex" description="Sha512加密"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Md5Hex" name="EncryptMd5Hex" description="MD5加密"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.EncryptDes" name="EncryptDes" description="DES加密。第一个参数为要加密的文本，第二个参数为加密的key。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.DecryptDes" name="DecryptDes" description="DES解密。第一个参数为要解密的文本，第二个参数为解密所需要的key。"/>
     </extra-core>

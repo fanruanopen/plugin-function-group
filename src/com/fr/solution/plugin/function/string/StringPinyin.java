@@ -33,6 +33,10 @@ public class StringPinyin extends AbstractSolutionFunction {
                 format = PinyinFormat.WITHOUT_TONE;
             }
         }
+        return convert(content, separator, format);
+    }
+
+    protected String convert(String content, String separator, PinyinFormat format) {
         return PinyinHelper.convertToPinyinString(content, separator, format);
     }
 }

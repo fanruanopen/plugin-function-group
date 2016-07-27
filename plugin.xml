@@ -2,7 +2,7 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>5.0</version>
+    <version>6.0</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor email="solution@finereport.com">solution.richie</vendor>
@@ -20,6 +20,8 @@
         [2016-05-08]增加常用的加密函数。<br/>
         [2016-07-12]增加字符串拼音首字母获取方式。<br/>
         [2016-07-12]字符串根据正则表达式抓取符合条件的内容。<br/>
+        [2016-07-27]字符串大小写交换函数。<br/>
+        [2016-07-12]阿拉伯数字转换为英文函数。<br/>
     ]]></change-notes>
     <extra-core>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringReverse" name="StringReverse" description="反转字符串"/>
@@ -29,6 +31,7 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringPinyin" name="StringPinyin" description="输出给定字符串的拼音。StringPinyin(&quot;你好啊&quot;, &quot;  &quot;, 1)返回这个字符串的拼音。第二哥参数表示拼音之间的间隔符，第三个参数表示拼音的输出格式，1表示不输出音调，-1表示音调用数字表示。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringConditionConcat" name="StringConditionConcat" description="根据条件拼接给定数组中的符合条件的元素，内置参数index表示索引位置，item表示元素值。StringConditionConcat([&quot;两个&quot;, &quot;b&quot;, &quot;黄鹂&quot;, &quot;asd&quot;, &quot;鸣翠柳&quot;], index % 2 = 1)将会输出两个黄鹂鸣翠柳。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringShortPinyin" name="StringShortPinyin" description="输出给定字符串的拼音首字母(小写)。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringSwapCase" name="StringSwapCase" description="交换字符串中字母的大小写。StringSwapCase(&quot;abcDeFg&quot;, &quot;bc&quot;)返回ABCdEfG。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.GetIP" name="GetIP" description="传递内置的sessionID参数，获取IP地址"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.ProcessErrorValue" name="ProcessErrorValue" description="处理返回错误值的公式。ProcessErrorValue(SQRT(), &quot;错误的值&quot;)，由于SQRT函数没有给定参数，直接使用的情况下是会返回#NAME的，而用了这个函数，就会返回第二个参数给定的值了（默认为空字符串）。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.JSONPathFinder" name="JSONPathFinder" description="根据JSON查询语句从给定的JSON内容中查询出结果。"/>
@@ -47,6 +50,7 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.Md5Hex" name="EncryptMd5Hex" description="MD5加密"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.EncryptDes" name="EncryptDes" description="DES加密。第一个参数为要加密的文本，第二个参数为加密的key。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.DecryptDes" name="DecryptDes" description="DES解密。第一个参数为要解密的文本，第二个参数为解密所需要的key。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.unit.NumberToEnglish" name="NumberToEnglish" description="将数字翻译成英文。NumberToEnglish(&quot;1234567&quot;)将返回One Million, Two Hundred And Thirty-Four Thousand, Five Hundred And Sixty-Seven。"/>
     </extra-core>
     <extra-report>
 

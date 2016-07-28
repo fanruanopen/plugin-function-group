@@ -2,7 +2,7 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>6.0</version>
+    <version>6.1</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor email="solution@finereport.com">solution.richie</vendor>
@@ -21,13 +21,14 @@
         [2016-07-12]增加字符串拼音首字母获取方式。<br/>
         [2016-07-12]字符串根据正则表达式抓取符合条件的内容。<br/>
         [2016-07-27]字符串大小写交换函数。<br/>
-        [2016-07-12]阿拉伯数字转换为英文函数。<br/>
+        [2016-07-28]阿拉伯数字转换为英文函数。<br/>
+        [2016-07-28]StringFetch函数增加返回数组中指定位置的元素。<br/>
     ]]></change-notes>
     <extra-core>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringReverse" name="StringReverse" description="反转字符串"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringFind" name="StringFind" description="查找字符串包含的字字符串的索引。StringFind(&quot;have a good time&quot;, &quot;a&quot;)，返回a在字符串中第一次出现的位置，函数可以传递第三个参数，false表示从尾部开始查找。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringMatch" name="StringMatch" description="判断字符串是否符合特定的正则表达式。StringMatch(&quot;abcdefg&quot;, &quot;bc&quot;)返回true。"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringFetch" name="StringFetch" description="根据正则表达式提取符合的字符串，最终返回一个数组。StringFetch(&quot;2012-08-12 2012-12 abcde 2012-08-23&quot;, &quot;\\d{4}[ /-]{1}\\d{2}([ /-]{1}\\d{2})?&quot;)将返回2012-08-12,2012-12,2012-08-23。"/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringFetch" name="StringFetch" description="根据正则表达式提取符合的字符串，最终返回一个数组，如果有第三个参数，则表示返回数组中第三个参数表示的索引位置的值。StringFetch(&quot;2012-08-12 2012-12 abcde 2012-08-23&quot;, &quot;\\d{4}[ /-]{1}\\d{2}([ /-]{1}\\d{2})?&quot;)将返回2012-08-12,2012-12,2012-08-23。StringFetch(&quot;2012-08-12 2012-12 abcde 2012-08-23&quot;, &quot;\\d{4}[ /-]{1}\\d{2}([ /-]{1}\\d{2})?&quot;, 2)将返回2012-08-23。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringPinyin" name="StringPinyin" description="输出给定字符串的拼音。StringPinyin(&quot;你好啊&quot;, &quot;  &quot;, 1)返回这个字符串的拼音。第二哥参数表示拼音之间的间隔符，第三个参数表示拼音的输出格式，1表示不输出音调，-1表示音调用数字表示。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringConditionConcat" name="StringConditionConcat" description="根据条件拼接给定数组中的符合条件的元素，内置参数index表示索引位置，item表示元素值。StringConditionConcat([&quot;两个&quot;, &quot;b&quot;, &quot;黄鹂&quot;, &quot;asd&quot;, &quot;鸣翠柳&quot;], index % 2 = 1)将会输出两个黄鹂鸣翠柳。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringShortPinyin" name="StringShortPinyin" description="输出给定字符串的拼音首字母(小写)。"/>

@@ -27,6 +27,12 @@ public class StringFetch extends AbstractSolutionFunction {
         while (m.find()) {
             result.add(m.group());
         }
+        if (len > 2) {
+            int index = GeneralUtils.objectToNumber(args[2]).intValue();
+            if (index > -1 && index < result.length() - 1) {
+                return result.elementAt(index);
+            }
+        }
         return result;
     }
 }

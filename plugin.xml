@@ -2,7 +2,7 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>6.1</version>
+    <version>6.2</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor email="solution@finereport.com">solution.richie</vendor>
@@ -23,6 +23,7 @@
         [2016-07-27]字符串大小写交换函数。<br/>
         [2016-07-28]阿拉伯数字转换为英文函数。<br/>
         [2016-07-28]StringFetch函数增加返回数组中指定位置的元素。<br/>
+        [2016-07-29]修正StringFetch返回单个元素时最后一个元素取值问题。<br/>
     ]]></change-notes>
     <extra-core>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.string.StringReverse" name="StringReverse" description="反转字符串"/>

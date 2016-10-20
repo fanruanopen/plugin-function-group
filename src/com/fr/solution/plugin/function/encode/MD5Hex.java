@@ -9,7 +9,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 /**
  * Created by richie on 16/5/10.
  */
-public class Md5Hex extends AbstractSolutionFunction {
+public class MD5Hex extends AbstractSolutionFunction {
     @Override
     public Object solve(Object[] args) {
         int len = ArrayUtils.getLength(args);

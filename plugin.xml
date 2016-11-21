@@ -8,7 +8,7 @@
     <vendor email="solution@finereport.com">solution.richie</vendor>
     <description><![CDATA[把一些常用的函数放到插件里面来,方便用户使用]]></description>
     <change-notes><![CDATA[
-        [2016-11-21]增加html页面解析函数。<a href="https://jsoup.org/cookbook/extracting-data/selector-syntax">语法查询规则可以参考这里</a><br/>
+        [2016-11-21]增加html页面解析系列函数。<a href="https://jsoup.org/cookbook/extracting-data/selector-syntax">语法查询规则可以参考这里</a><br/>
         [2016-07-29]修正StringFetch返回单个元素时最后一个元素取值问题。<br/>
         [2016-07-28]StringFetch函数增加返回数组中指定位置的元素。<br/>
         [2016-07-28]阿拉伯数字转换为英文函数。<br/>
@@ -54,7 +54,7 @@
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.EncryptDes" name="EncryptDes" description="DES加密。第一个参数为要加密的文本，第二个参数为加密的key。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.encode.DecryptDes" name="DecryptDes" description="DES解密。第一个参数为要解密的文本，第二个参数为解密所需要的key。"/>
         <FunctionDefineProvider class="com.fr.solution.plugin.function.unit.NumberToEnglish" name="NumberToEnglish" description="将数字翻译成英文。NumberToEnglish(&quot;1234567&quot;)将返回One Million, Two Hundred And Thirty-Four Thousand, Five Hundred And Sixty-Seven。"/>
-        <FunctionDefineProvider class="com.fr.solution.plugin.function.HtmlFinder" name="HtmlFinder" description="Html页面元素查找函数。第一个参数为要查找的html页面的地址，第二个参数为查询的dom标记。HtmlFinder(&quot;http://www.baidu.com&quot;, &quot;a[href]&quot;)可以查找到baidu首页的所有超级链接内容。其他语法规则可以参看这里：https://jsoup.org/cookbook/extracting-data/selector-syntax."/>
+        <FunctionDefineProvider class="com.fr.solution.plugin.function.html.HtmlFinder" name="HtmlFinder" description="Html页面元素查找函数。第一个参数为要查找的html页面的地址，第二个参数为查询的dom标记。HtmlFinder(&quot;http://www.baidu.com&quot;, &quot;a[href]&quot;)可以查找到baidu首页的所有超级链接内容。其他语法规则可以参看这里：https://jsoup.org/cookbook/extracting-data/selector-syntax."/>
     </extra-core>
     <extra-report>
 

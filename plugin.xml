@@ -2,12 +2,13 @@
     <id>com.fr.solution.plugin.function</id>
     <name><![CDATA[常用函数集合]]></name>
     <active>yes</active>
-    <version>6.3</version>
+    <version>6.4</version>
     <env-version>8.0</env-version>
     <jartime>2015-12-20</jartime>
     <vendor email="solution@finereport.com">solution.richie</vendor>
     <description><![CDATA[把一些常用的函数放到插件里面来,方便用户使用]]></description>
     <change-notes><![CDATA[
+        [2015-12-02]GetIP函数可以不再传递参数，系统默认计算。<br/>
         [2016-11-21]增加html页面解析系列函数。<a href="https://jsoup.org/cookbook/extracting-data/selector-syntax">语法查询规则可以参考这里</a><br/>
         [2016-07-29]修正StringFetch返回单个元素时最后一个元素取值问题。<br/>
         [2016-07-28]StringFetch函数增加返回数组中指定位置的元素。<br/>

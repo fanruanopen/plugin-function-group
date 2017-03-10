@@ -32,7 +32,7 @@ public class HtmlFinder extends AbstractSolutionFunction {
         String selector = GeneralUtils.objectToString(args[1]);
         Document doc = null;
         try {
-            doc = Jsoup.connect(source).get();
+            doc = Jsoup.connect(source).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31") .get();
         } catch (IOException e) {
             FRLogger.getLogger().error(e.getMessage(), e);
         }
@@ -50,7 +50,7 @@ public class HtmlFinder extends AbstractSolutionFunction {
 
     public static void main(String... args) {
         HtmlFinder finder = new HtmlFinder();
-        Object t = finder.solve(new Object[]{"http://www.baidu.com", "a[href]"});
+        Object t = finder.solve(new Object[]{"https://www.baidu.com", "a[href]"});
         System.out.println(t);
     }
 }

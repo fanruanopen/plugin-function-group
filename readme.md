@@ -18,7 +18,7 @@ ScriptEval('if(a > 4) {return a * b;} else if (a < 4 && a > 1){return Math.abs(a
 ## StringReverse
 把给定的参数字符串做倒转。
 
-##StringFind	
+## StringFind	
 查找第一个匹配的字符串，支持从头开始查找和从尾部开始查找。
 
 ## StringMatch

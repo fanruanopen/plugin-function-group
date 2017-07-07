@@ -121,6 +121,6 @@
             <include name="${plugin-folder}/*.dll"/>
             <include name="${plugin-folder}/plugin.xml"/>
         </zip>
-        <move file="${plugin-folder}.zip" todir="${destLoc}/${plugin.name}"/>
+        <move file="${plugin-folder}.zip" todir="${destLoc}/install"/>
     </target>
 </project>
